@@ -21,7 +21,11 @@ def destination_create(request):
     form = DestinationForm()
     if request.method == "POST":
         form = DestinationForm(request.POST, request.FILES)
+        print("before validation ")
+        print(form)
         if form.is_valid():
+            print("in is valid")
+            print(form)
             form.save()
             return redirect('destination-list')
     context = {

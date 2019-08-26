@@ -3,15 +3,21 @@
 {% block title %}Detail{% endblock title %} 
 
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
+<p class="text-light bg-dark" >Destination:</p>
+    <div class="alert alert-success" role="alert">{{destination.name}}</div>
+<p class="text-light bg-dark">Description:</p>
+<div class="alert alert-success" role="alert">{{destination.description}}</div>
+<p class="text-light bg-dark">Activities:</p>
+    <div class="alert alert-success" role="alert">{{destination.activities}}</div>
+
+    <center><p><img src="{{destination.pretty_picture.url}}" alt="Cinque Terre" width="450" height="300" class="alert alert-light" class="card-img-top" role="alert" ></p></center>
+
+<p class="text-light bg-dark">Optimal Visiting Season:</p>
+    <div class="alert alert-success" role="alert">{{destination.optimal_visiting_season}}</div>
+    <a href="{% url 'destination-update' destination.id %}" class="btn btn-info">Update</button>
     </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
+    <a href="{% url 'destination-delete' destination.id %}" class="btn btn-danger">Delete</button>
     </a>
 {% endblock content %}
+
+
